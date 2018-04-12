@@ -1,56 +1,94 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
-    <form (ngSubmit)="onSubmitSignup(signupForm)" #signupForm="ngForm">
-      <div class="form-group" [class.has-error]="email.errors && email.touched">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-user"></i>
-          </span>
-          <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required
-            email>
-        </div>
-        <label class="control-label" *ngIf="email.errors && email.touched">
-          <ul>
-            <li *ngIf="email.errors.required">Required</li>
-            <li *ngIf="email.errors.email">Invalid email format</li>
-          </ul>
-        </label>
+<form (ngSubmit)="onSubmitSignup(signupForm)" #signupForm="ngForm">
+    <div class="form-group" [class.has-error]="email.errors && email.touched">
+      <div class="input-group">
+        <span class="input-group-addon">
+        <i class="fa fa-user"></i>
+      </span>
+        <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required email>
       </div>
-
-      <div class="form-group" [class.has-error]="password.errors && password.touched">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-lock"></i>
-          </span>
-          <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" #password="ngModel"
-            required>
-        </div>
-        <label class="control-label" *ngIf="password.errors && password.touched">
-          <ul>
-            <li *ngIf="password.errors.required">Required</li>
-          </ul>
-        </label>
+      <label class="control-label" *ngIf="email.errors && email.touched">
+      <ul>
+        <li *ngIf="email.errors.required">Required</li>
+        <li *ngIf="email.errors.email">Invalid email format</li>
+      </ul>
+    </label>
+    </div>
+    <div class="form-group" [class.has-error]="password.errors && password.touched">
+      <div class="input-group">
+        <span class="input-group-addon">
+      <i class="fa fa-lock"></i>
+    </span>
+        <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required>
       </div>
-
-      <div class="form-group" class="has-error" *ngIf="apiError">
-        <label class="control-label">
-          {{ apiError }}
-        </label>
+      <label class="control-label" *ngIf="password.errors && password.touched">
+    <ul>
+      <li *ngIf="password.errors.required">Required</li>
+    </ul>
+  </label>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
       </div>
-
-      <div class="form-actions">
-        <button type="submit" class="btn btn-block btn-primary" [disabled]="!signupForm.valid">Sign up!</button>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip" [(ngModel)]="user.zip" #zip="ngModel" required>
       </div>
-    </form>
-  </div>
+    </div>
+    <div class="form-group" class="has-error" *ngIf="apiError">
+      <label class="control-label">
+      {{ apiError }}
+    </label>
+    </div>
+    <div>
+      <div class="col-sm-2">Weekdays</div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Monday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Wednesday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Thursday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Friday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Saturday</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Sunday</label>
+      </div>
+    </div>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="customFile">
+      <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-block btn-primary" [disabled]="!signupForm.valid">Sign up!</button>
+    </div>
+</form>
+<div class="form-group row">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
     <hr>
     <div class="panel panel-default">
       <div class="panel-heading text-center">
         All ready have an account?
-        <a [routerLink]="['/login']">Sign in</a>
+        <a [routerLink]="['/login']">Log in</a>
       </div>
     </div>
   </div>
+
 </div>
