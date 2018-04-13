@@ -20,8 +20,8 @@ export class SignupComponent {
   onSubmitSignup(signupForm) {
     this.usersService.create(this.user).subscribe(
       (user) => {
-        signupForm.reset();
-        this.router.navigate(['/login']);
+        this.user = new User();
+        this.router.navigate(['/home']);
       },
       (error) => {
         this.apiError = error.message;
