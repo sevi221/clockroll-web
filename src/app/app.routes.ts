@@ -14,7 +14,7 @@ export const routes: Routes = [
 
 
 
-
+//GUARDAS
     // { path: 'phones', canActivate: [IsAuthenticatedGuard], component: PhoneListComponent},
     // {
     //     path: 'phones',

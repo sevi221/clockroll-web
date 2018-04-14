@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ErrorHandler } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
 
 import './rxjs.operators';
 
@@ -16,6 +17,7 @@ import { GlobalErrorHandlerService } from './shared/service/global-error-handler
 
 import { TimerService } from './shared/service/timer.service';
 import { SessionService } from './shared/service/session.service';
+import { WeatherService } from './shared/service/weather.service';
 
 //Components
 import { AppComponent } from './app.component';
@@ -43,12 +45,14 @@ import { SignupComponent } from './components/misc/signup/signup.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
     SessionService,
     UsersService,
     TimerService,
+    WeatherService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

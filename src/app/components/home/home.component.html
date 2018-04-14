@@ -1,3 +1,7 @@
-<div id="clock">
-    <p class="">11:36:27</p>
+<div *ngIf="timer" id="clock">
+  <p class="time">{{timer.hours}}:{{timer.minutes}}:{{timer.seconds}}</p>
+  <!-- <div class="weather" [ngStyle]="{'weatherApi': 'url(cdn.apixu.com/weather/64x64/day/116.png)'"> </div>-->
+  <div class="weatherCity">
+    <h4>Madrid</h4>
+  </div>
 </div>

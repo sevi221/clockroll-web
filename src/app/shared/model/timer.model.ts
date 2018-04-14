@@ -1,5 +1,5 @@
 export class Timer {
-    hours: string;
-    minutes: string;
-    seconds: string;
+  hours: String;
+  minutes: String;
+  seconds: String;
 }

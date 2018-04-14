@@ -5,14 +5,20 @@ import { Timer } from './../model/timer.model';
 
 @Injectable()
 export class TimerService {
+  timer: Timer = new Timer;
 
-  constructor() { }
+  constructor() {
+  }
 
-  // getHours(){
-  //   const timer = new Timer;
-  //   const hours = timer.getHours();
-  //   const minutes = timer.getMinutes();
-  //   const seconds = timer.getSeconds();
-  // }
+  getTime(){
+    const date = new Date();
+    this.timer.hours = this.formatTime(date.getHours());
+    this.timer.minutes = this.formatTime(date.getMinutes());
+    this.timer.seconds = this.formatTime(date.getSeconds());
+    return this.timer;
+  }
 
+  formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+  }
 }
