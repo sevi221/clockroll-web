@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from './../model/user.model';
 import { Weekdays } from './../model/weekdays.model';
 import { Timer } from './../model/timer.model';
-import { Http, JsonpModule, Jsonp, Response } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 
 
@@ -19,5 +19,6 @@ export class WeatherService {
 
     return this.http.get(url)
       .map(res => res.json());
+
   }
 }

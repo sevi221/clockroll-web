@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { WeatherService } from '../../shared/service/weather.service';
 import { TimerService } from '../../shared/service/timer.service';
 import { Timer } from '../../shared/model/timer.model';
+import { AlarmService } from '../../shared/service/alarm.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent {
    ) {
      setInterval(() => this.getTime(), 1000);
         this.weatherService.getWeather()
-          .subscribe(weather => { console.log(weather) });
+          .subscribe(weather => { console.log(weather.current.temp_c) });
    }
 
   getTime() {

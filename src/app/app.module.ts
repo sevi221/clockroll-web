@@ -16,6 +16,7 @@ import { UsersService } from './shared/service/users.service';
 import { GlobalErrorHandlerService } from './shared/service/global-error-handler.service';
 
 import { TimerService } from './shared/service/timer.service';
+import { AlarmService } from './shared/service/alarm.service';
 import { SessionService } from './shared/service/session.service';
 import { WeatherService } from './shared/service/weather.service';
 
