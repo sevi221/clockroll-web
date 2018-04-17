@@ -11,13 +11,13 @@ p {
     padding: 0;
 }
 #clock {
-    font-family: 'Share Tech Mono', monospace;
-    color: #212121;
+    font-family: 'Abril Fatface', cursive;
+    color: #84754E;
     text-align: center;
     font-size: 10em;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+    text-shadow: 6px 3px 4px rgba(224, 185, 155, 0.66);
     }
