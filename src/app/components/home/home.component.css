@@ -1,23 +1,45 @@
-html,body {
-    height: 100%;
+
+.home__component {
+  height: 100%;
 }
-body {
-    background: #212121;
-    /* background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%); */
-    background-size: 100%;
+.container {
+  display:inline-flex;
+  align-items: center;
+  justify-content:center;
 }
-p {
-    margin: 0;
-    padding: 0;
-}
+
 #clock {
+    display: inline-flex;
     font-family: 'Abril Fatface', cursive;
-    color: #84754E;
+    color: #CB0000;
     text-align: center;
-    font-size: 10em;
+    font-size: 130px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 6px 3px 4px rgba(224, 185, 155, 0.66);
+    text-shadow: 2px 2px 0px rgba(0, 169, 235, 1);
     }
+
+.weatherApi {
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  list-style-type:none;
+  color:white;
+
+}
+.colon {
+				text-align: center;
+				animation: blink 2s infinite;
+      }
+        @keyframes blink {
+	0%   { opacity: 0; }
+	30%  { opacity: 1; }
+	50%  { opacity: 0; }
+	70%  { opacity: 1; }
+	100% { opacity: 0; }
+}

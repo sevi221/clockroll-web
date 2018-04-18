@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   constructor(public _ws:WeatherService){
 
     this._ws.getWeather()
-      .subscribe( data=>{
+      .subscribe( data => {
         console.log(data);
       })
   }

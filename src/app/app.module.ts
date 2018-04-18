@@ -20,6 +20,8 @@ import { AlarmService } from './shared/service/alarm.service';
 import { SessionService } from './shared/service/session.service';
 import { WeatherService } from './shared/service/weather.service';
 
+import { FileSelectDirective } from "ng2-file-upload";
+
 //Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component'
@@ -31,7 +33,6 @@ import { SignupComponent } from './components/misc/signup/signup.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,10 @@ import { SignupComponent } from './components/misc/signup/signup.component';
     SignupComponent,
     BodyComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    FileSelectDirective,
+
+
   ],
   imports: [
     BrowserModule,

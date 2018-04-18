@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from './../model/user.model';
 import { Weekdays } from './../model/weekdays.model';
 import { Timer } from './../model/timer.model';
-import { Alarm } from './../model/alarm.model'
+import { Alarm } from './../model/alarm.model';
+
 
 @Injectable()
 export class AlarmService {

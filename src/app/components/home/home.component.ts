@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WeatherService } from '../../shared/service/weather.service';
 import { TimerService } from '../../shared/service/timer.service';
@@ -12,20 +12,30 @@ import { AlarmService } from '../../shared/service/alarm.service';
 
 })
 export class HomeComponent {
-   timer: Timer = new Timer();
+  timer: Timer = new Timer();
+  weather: Object = null;
 
-   constructor(
-     public weatherService: WeatherService,
-     public timerService: TimerService
-   ) {
-     setInterval(() => this.getTime(), 1000);
-        this.weatherService.getWeather()
-          .subscribe(weather => { console.log (weather.current.temp_) });
-   }
+  constructor(
+    public weatherService: WeatherService,
+    public timerService: TimerService
+  ) {
+    setInterval(() => this.getTime(), 1000);
+  }
+
+  ngOnInit() {
+    this.weatherService.getWeather()
+      .subscribe(weather => {
+        this.weather = weather;
+        console.log(this.weather);
+      });
+  }
 
   getTime() {
     this.timer = this.timerService.getTime();
   }
-
+  //   $(function() {
+  //     $(".lightTheme").toggleClass("darkTheme");
+  //     $(".darkTheme").toggleClass("lightTheme");
+  // }
 
 }

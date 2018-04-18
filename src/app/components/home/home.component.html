@@ -1,13 +1,15 @@
-<div *ngIf="timer" id="clock">
-  <p class="time">{{timer.hours}}:{{timer.minutes}}:{{timer.seconds}}</p>
-  <div class="weatherCity">
-    <h4>Madrid</h4>
-  </div>
 
-  <!-- <div class="weatherApi">
-    <ul *ngFor="let current of data.current">
-      <li>Current Weather:{{current}}</li>
-      <li>Humidity: {{current.humidity}}</li>
-    </ul>
-  </div> -->
+<div class="container">
+  <div *ngIf="timer" id="clock">
+    <p class="clock">{{timer.hours}}<span class="colon">:</span>{{timer.minutes}}<span class="colon">:</span>{{timer.seconds}}</p>
+  </div>
+  <div class="weatherApi">
+    <div *ngIf="weather">
+      <h3>{{weather.location.name}}</h3>
+      <h3>{{weather.location.country}}</h3>
+      <h3>{{weather.current.temp_c}}&deg;</h3>
+      <h3>{{weather.current.condition.text}}</h3>
+      <!-- <li>{{weather.current.condition.icon}}</li> -->
+    </div>
+  </div>
 </div>
