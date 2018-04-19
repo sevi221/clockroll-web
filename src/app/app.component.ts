@@ -9,7 +9,6 @@ import { HttpModule } from '@angular/http';
 })
 export class AppComponent implements OnInit{
 
-
   constructor(public _ws:WeatherService){
 
     this._ws.getWeather()

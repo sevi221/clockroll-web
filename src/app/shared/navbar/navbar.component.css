@@ -1,6 +1,9 @@
 .navbar-default {
-	background-color:transparent !important;
-	border-color:transparent;
-	background-image:none;
-	box-shadow:none;
+    background-color:#CB0000;
+    border-color: #E7E7E7;
 }
+
+.nav-link {
+    display: block;
+    padding: 0 0;
+  }

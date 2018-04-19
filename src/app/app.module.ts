@@ -5,7 +5,6 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
 import './rxjs.operators';
 
 //Routes
@@ -30,8 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component'
 import { LoginComponent } from './components/misc/login/login.component';
 import { SignupComponent } from './components/misc/signup/signup.component';
-
-
+import { AlarmComponent } from './shared/alarm/alarm.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +41,7 @@ import { SignupComponent } from './components/misc/signup/signup.component';
     FooterComponent,
     HomeComponent,
     FileSelectDirective,
-
-
+    AlarmComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+#clockAlarm {
+    display: inline-flex;
+    font-family: 'Abril Fatface', cursive;
+    color: #CB0000;
+    text-align: center;
+    font-size: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 0px rgba(0, 169, 235, 1);
+    }

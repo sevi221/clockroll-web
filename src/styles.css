@@ -3,12 +3,59 @@
 html, body {
 
 }
-
+.control-label {
+  color:white;
+}
 body {
   font-family: 'Abril Fatface', cursive;
+  font-weight: 400;
   background-image: url('/assets/img/wallpa1.png');
   background-size: 100%;
   background-repeat: no-repeat;
+  background-color: white;
   color: #CB0000;
-
 }
+.container {
+  display: inline-flex;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and ( max-width: 1024px ) and (orientation: landscape)  {
+  body {
+    background-size: 100%;
+    background-repeat: space;
+  }
+}
+  /* Aquí van los estilos para iPad horizontal */
+
+@media only screen and ( max-width: 768px ) {
+  body {
+    background-color: #2e2e38;
+    font-weight: 500;
+  }
+  .clock {
+    font-size: 5rem;
+  }
+}
+  /* Aquí van los estilos para iPad vertical */
+
+
+@media only screen and ( max-width: 480px ) {
+  body {
+    background-size: 100%;
+  }
+}
+  /* Aquí van los estilos para iPhone horizontal */
+
+
+@media only screen and ( max-width: 320px ) {
+  body {
+    background-color: green;
+  }
+  .clock {
+    font-size: 5rem;
+  }
+  }
+  /* Aquí van los estilos para iPhone vertical */

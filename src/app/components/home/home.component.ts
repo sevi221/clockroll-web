@@ -33,9 +33,5 @@ export class HomeComponent {
   getTime() {
     this.timer = this.timerService.getTime();
   }
-  //   $(function() {
-  //     $(".lightTheme").toggleClass("darkTheme");
-  //     $(".darkTheme").toggleClass("lightTheme");
-  // }
 
 }

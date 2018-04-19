@@ -1,41 +1,40 @@
-<form (ngSubmit)="onSubmitSignup(signupForm)" #signupForm="ngForm">
-    <div class="form-group" [class.has-error]="email.errors && email.touched">
-      <div class="input-group">
-        <span class="input-group-addon">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <form (ngSubmit)="onSubmitSignup(signupForm)" #signupForm="ngForm">
+        <div class="form-group" [class.has-error]="email.errors && email.touched">
+          <div class="input-group">
+            <span class="input-group-addon">
         <i class="fa fa-user"></i>
       </span>
-        <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required email>
-      </div>
-      <label class="control-label" *ngIf="email.errors && email.touched">
+            <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" required email>
+          </div>
+          <label class="control-label" *ngIf="email.errors && email.touched">
       <ul>
         <li *ngIf="email.errors.required">Required</li>
         <li *ngIf="email.errors.email">Invalid email format</li>
       </ul>
     </label>
-    </div>
-    <div class="form-group" [class.has-error]="password.errors && password.touched">
-      <div class="input-group">
-        <span class="input-group-addon">
+        </div>
+        <div class="form-group" [class.has-error]="password.errors && password.touched">
+          <div class="input-group">
+            <span class="input-group-addon">
       <i class="fa fa-lock"></i>
     </span>
-        <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required>
-      </div>
-      <label class="control-label" *ngIf="password.errors && password.touched">
+            <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required>
+          </div>
+          <label class="control-label" *ngIf="password.errors && password.touched">
     <ul>
       <li *ngIf="password.errors.required">Required</li>
     </ul>
   </label>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div>
-        <div class="form-row align-items-center">
-    <div class="col-auto my-1">
-      <label class="mr-sm-2" for="inlineFormCustomSelect">Alarm</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        </div>
+        <div class="form-row">
+          <div>
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Alarm</label>
+                <select class="custom-select mr-sm-2" id="alarmhrs">
         <option selected>Hour...</option>
         <option value="01">01</option>
         <option value="02">02</option>
@@ -62,77 +61,86 @@
         <option value="23">23</option>
         <option value="24">24</option>
       </select>
-  <div class="col-auto my-1">
-    <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Minutes</label> -->
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect1">
+                <!-- <div class="col-auto my-1"> -->
+                  <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Minutes</label> -->
+                  <select class="custom-select mr-sm-2" id="alarmmins">
         <option selected>Minutes...</option>
         <option value="00">00</option>
         <option value="15">15</option>
         <option value="30">30</option>
         <option value="45">45</option>
       </select>
-    </div>
-    </div>
-  </div>
-      </div>
-      <!-- <div class="form-group col-md-2">
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div class="form-group col-md-2">
         <label for="inputZip">Zip</label>
         <input type="text" class="form-control" id="inputZip" [(ngModel)]="user.zip" #zip="ngModel" required>
       </div> -->
-    </div>
-    <div class="form-group" class="has-error" *ngIf="apiError">
-      <label class="control-label">
+        </div>
+        <div class="form-group" class="has-error" *ngIf="apiError">
+          <label class="control-label">
       {{ apiError }}
     </label>
-    </div>
-    <div>
-      <div class="col-sm-2">Weekdays</div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">Monday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-        <label class="form-check-label" for="inlineCheckbox4">Thursday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-        <label class="form-check-label" for="inlineCheckbox5">Friday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-        <label class="form-check-label" for="inlineCheckbox6">Saturday</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-        <label class="form-check-label" for="inlineCheckbox7">Sunday</label>
-      </div>
-    </div>
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="customFile">
-      <label class="custom-file-label" for="customFile">Choose file</label>
-    </div>
-    <div class="form-actions">
-      <button type="submit" class="btn btn-block btn-primary" [disabled]="!signupForm.valid">OK!</button>
-    </div>
-</form>
-<div class="form-group row">
-  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <hr>
-    <div class="panel panel-default">
-      <div class="panel-heading text-center">
-        Already have an account?
-        <a [routerLink]="['/login']">Log in</a>
-      </div>
-    </div>
-  </div>
+        </div>
+        <div>
+          <div class="col-sm-2">Weekdays</div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Monday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+            <label class="form-check-label" for="inlineCheckbox4">Thursday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+            <label class="form-check-label" for="inlineCheckbox5">Friday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+            <label class="form-check-label" for="inlineCheckbox6">Saturday</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+            <label class="form-check-label" for="inlineCheckbox7">Sunday</label>
+          </div>
+        </div>
 
-</div>
+        <hr>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-block btn-primary" [disabled]="!signupForm.valid" [routerLink]="['/home']">OK!</button>
+        </div>
+        <div class="form-group" class="has-error" *ngIf="apiError">
+          <label class="control-label">
+          {{ apiError }}
+        </label>
+        </div>
+      </form>
+      <div class="form-group row justify-content-center">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <hr>
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              Already have an account?
+              <a [routerLink]="['/login']">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,15 +1,14 @@
-
 <div class="container">
-  <div *ngIf="timer" id="clock">
-    <p class="clock">{{timer.hours}}<span class="colon">:</span>{{timer.minutes}}<span class="colon">:</span>{{timer.seconds}}</p>
-  </div>
-  <div class="weatherApi">
-    <div *ngIf="weather">
-      <h3>{{weather.location.name}}</h3>
-      <h3>{{weather.location.country}}</h3>
-      <h3>{{weather.current.temp_c}}&deg;</h3>
-      <h3>{{weather.current.condition.text}}</h3>
-      <!-- <li>{{weather.current.condition.icon}}</li> -->
+  <div clas="row justify-content-center">
+      <div *ngIf="weather" class="weatherApi">
+        <h3>{{weather.location.name}}</h3>
+        <h5>{{weather.location.country}}</h5>
+        <h1>{{weather.current.temp_c}}&deg;</h1>
+        <h3>{{weather.current.condition.text}}</h3>
+        <!-- <li>{{weather.current.condition.icon}}</li> -->
+      </div>
+    <div *ngIf="timer" id="clock">
+      <p class="clock">{{timer.hours}}<span class="colon">:</span>{{timer.minutes}}<span class="colon">:</span>{{timer.seconds}}</p>
     </div>
   </div>
 </div>
