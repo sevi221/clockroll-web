@@ -8,7 +8,7 @@ html, body {
 }
 body {
   font-family: 'Abril Fatface', cursive;
-  font-weight: 400;
+  font-weight: 500;
   background-image: url('/assets/img/wallpa1.png');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -22,40 +22,63 @@ body {
   justify-content: center;
 }
 
+#clock{
+left: 50%;
+top: 50%;
+}
+
+/* Aquí van las pantallas normales */
+
+
 @media only screen and ( max-width: 1024px ) and (orientation: landscape)  {
   body {
     background-size: 100%;
     background-repeat: space;
   }
+
+  #clock{
+  left: 50%;
+  top: 32%;
+  }
 }
   /* Aquí van los estilos para iPad horizontal */
-
+/*
 @media only screen and ( max-width: 768px ) {
   body {
     background-color: #2e2e38;
-    font-weight: 500;
+    background-repeat: repeat;
   }
-  .clock {
-    font-size: 5rem;
+
+  #clock{
+  left: 50%;
+  top: 40%;
+  font-size: 5rem;
   }
 }
   /* Aquí van los estilos para iPad vertical */
 
-
+/*
 @media only screen and ( max-width: 480px ) {
   body {
     background-size: 100%;
+    background-color: #2e2e38;
+  }
+  #clock {
+    left: 50%;
+    top: 20%;
   }
 }
   /* Aquí van los estilos para iPhone horizontal */
 
-
+/*
 @media only screen and ( max-width: 320px ) {
   body {
-    background-color: green;
+    background-color: #2e2e38;
   }
-  .clock {
-    font-size: 5rem;
+  #clock {
+    left: 50%;
+    top: 20%;
+    position: relative;
   }
-  }
+  } **/
   /* Aquí van los estilos para iPhone vertical */

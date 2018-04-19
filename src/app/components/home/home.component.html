@@ -1,10 +1,11 @@
 <div class="container">
   <div clas="row justify-content-center">
-      <div *ngIf="weather" class="weatherApi">
-        <h3>{{weather.location.name}}</h3>
-        <h5>{{weather.location.country}}</h5>
-        <h1>{{weather.current.temp_c}}&deg;</h1>
-        <h3>{{weather.current.condition.text}}</h3>
+      <div *ngIf="weather" class="weatherApi col align-self-end">
+        <p>
+          <span class="location">{{weather.location.name}}</span>
+          <span class="country">{{weather.location.country}}</span>
+          <span class="temp">{{weather.current.temp_c}}&deg;</span>
+          <span class="condition">{{weather.current.condition.text}}</span>
         <!-- <li>{{weather.current.condition.icon}}</li> -->
       </div>
     <div *ngIf="timer" id="clock">
