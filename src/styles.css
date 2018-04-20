@@ -22,6 +22,12 @@ body {
   justify-content: center;
 }
 
+.btn-group-lg>.btn, .btn-lg {
+  margin: 2px 2px 2px 3px;
+}
+.form-control {
+  padding: 2.375rem .75rem;
+}
 #clock{
 left: 50%;
 top: 50%;

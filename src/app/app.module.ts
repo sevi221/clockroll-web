@@ -19,7 +19,7 @@ import { AlarmService } from './shared/service/alarm.service';
 import { SessionService } from './shared/service/session.service';
 import { WeatherService } from './shared/service/weather.service';
 
-import { FileSelectDirective } from "ng2-file-upload";
+// import { FileSelectDirective } from "ng2-file-upload";
 
 //Components
 import { AppComponent } from './app.component';
@@ -40,7 +40,6 @@ import { AlarmComponent } from './shared/alarm/alarm.component';
     BodyComponent,
     FooterComponent,
     HomeComponent,
-    FileSelectDirective,
     AlarmComponent,
   ],
   imports: [

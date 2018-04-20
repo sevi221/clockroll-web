@@ -29,93 +29,19 @@
     </ul>
   </label>
         </div>
-        <div class="form-row">
-          <div>
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Alarm</label>
-                <select class="custom-select mr-sm-2" id="alarmhrs">
-        <option selected>Hour...</option>
-        <option value="01">01</option>
-        <option value="02">02</option>
-        <option value="03">03</option>
-        <option value="04">04</option>
-        <option value="05">05</option>
-        <option value="06">06</option>
-        <option value="07">07</option>
-        <option value="08">08</option>
-        <option value="09">09</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-      </select>
-                <!-- <div class="col-auto my-1"> -->
-                  <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Minutes</label> -->
-                  <select class="custom-select mr-sm-2" id="alarmmins">
-        <option selected>Minutes...</option>
-        <option value="00">00</option>
-        <option value="15">15</option>
-        <option value="30">30</option>
-        <option value="45">45</option>
-      </select>
-                <!-- </div> -->
-              </div>
-            </div>
-          </div>
-          <!-- <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip" [(ngModel)]="user.zip" #zip="ngModel" required>
-      </div> -->
+        <div class="form-group row justify-content-center">
+            <label class="hours">
+              <input type="time" class="form-control input-lg" [(ngModel)]="hours" name="hours"  value="0" min="00" required/>
+            </label>
+          <input type="submit" class="btn btn-lg btn-danger" value="Set Alarm">
+          <input type="submit" class="btn btn-lg btn-warning" value="Off Alarm">
         </div>
         <div class="form-group" class="has-error" *ngIf="apiError">
           <label class="control-label">
       {{ apiError }}
     </label>
         </div>
-        <div>
-          <div class="col-sm-2">Weekdays</div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Monday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Tuesday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">Wednesday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-            <label class="form-check-label" for="inlineCheckbox4">Thursday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-            <label class="form-check-label" for="inlineCheckbox5">Friday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-            <label class="form-check-label" for="inlineCheckbox6">Saturday</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-            <label class="form-check-label" for="inlineCheckbox7">Sunday</label>
-          </div>
-        </div>
-
+    
         <hr>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="customFile">

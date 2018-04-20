@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { User } from './../model/user.model';
 import { Timer } from './../model/timer.model';
 import { Alarm } from './../model/alarm.model';
@@ -9,14 +9,21 @@ import { TimerService } from './../service/timer.service';
   templateUrl: './alarm.component.html',
   styleUrls: ['./alarm.component.css']
 })
-export class AlarmComponent implements OnInit {
+
+export class AlarmComponent {
+  hours: String = "";
   alarm: Alarm = new Alarm;
   timer: Timer = new Timer;
   sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/clocks/clock_chime.wav");
 
-  constructor() {}
+  constructor() { }
 
-  getTime(){
+
+  formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+  }
+
+  getTime() {
     const date = new Date();
     this.timer.hours = this.formatTime(date.getHours());
     this.timer.minutes = this.formatTime(date.getMinutes());
@@ -24,24 +31,18 @@ export class AlarmComponent implements OnInit {
     return this.timer;
   }
 
-  formatTime(time) {
-    return time < 10 ? `0${time}` : time;
-  }
+  onSetAlarm() {
+    let alarm = new Date();
+    alarm.setHours(Number(this.hours.split(":")[0]));
+    alarm.setMinutes(Number(this.hours.split(":")[1]));
+    alarm.setSeconds(0);
 
-  setAlarm(){
-    const date = new Date();
-      this.alarm.hours = this.formatTime(date.getHours());
-      this.alarm.minutes = this.formatTime(date.getMinutes());
-      this.alarm.seconds = this.formatTime(date.getSeconds());
-    return this.alarm;
-  }
+    const runIn = alarm.getTime() - new Date().getTime();
+    // console.log("Alarm will run in " + runIn 'ms');
 
-  playAlarm(){
-      if (this.timer == this.alarm)
-      return this.sound.play();
-    }
-
-  ngOnInit() {
+    setTimeout(() => {
+      this.sound.play();
+    }, runIn);
   }
 
 }
